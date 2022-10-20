@@ -1,0 +1,111 @@
+.pc {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-items: center !important;
+    flex-direction: column !important;
+    gap: 4vh;
+    background-color: #F2F2F2;
+}
+
+.inputAndFilter {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50vw;
+    flex-wrap: wrap !important;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.btn-secondary {
+    color: black;
+    border: 0px;
+    background-color: white !important;
+}
+
+.dropdown-menu {
+border: 0px !important;
+}
+
+
+.countries, .tab-content {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 5vw !important;
+    width: 100% !important;
+    height: fit-content !important;
+    overflow-y: auto;
+    padding-left: 3vw !important;
+    padding-right: 3vw !important;
+    flex-wrap: wrap;
+  
+}
+
+#v-pills-all, #v-pills-africa, #v-pills-europe, #v-pills-asia, #v-pills-america, #v-pills-oceania {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vh;
+
+}
+
+#v-pills-africa, #v-pills-europe, #v-pills-asia, #v-pills-america, #v-pills-oceania {
+    margin-top: -90vh;
+    
+}
+
+ #v-pills-asia {
+    margin-top: -110vh !important;
+ 
+}
+
+#v-pills-europe {
+    margin-top: -120vh !important;
+}
+
+#v-pills-america {
+    margin-top: -100vh;
+}
+
+#v-pills-oceania {
+    margin-top: -125vh !important;
+}
+
+.card-block {
+cursor: pointer;
+color: black;
+text-decoration: none !important;
+}
+
+@media screen and (max-width: 480px) {
+
+    .inputAndFilter {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 3vh !important;
+    }
+
+#v-pills-all {
+    margin-top: 0px !important;
+}
+
+    #v-pills-africa, #v-pills-europe, #v-pills-asia, #v-pills-america, #v-pills-oceania { 
+
+margin-top: -80vh !important;        
+    }
+
+
+    .input-group {
+        width: 95vw !important;
+    }
+
+
+
+  }
+

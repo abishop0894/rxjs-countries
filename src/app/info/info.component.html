@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<section class="leftRight">
+<img style="width: 500px; height:400px" src="{{Country.flags.png}}" />
+
+<section class="textLeft">
+<h1>{{Country.name.common}}</h1>
+<p><b>Native Name:</b>{{native}}</p>
+<p><b>Population:</b>{{Country.population}}</p>
+<p><b>Region:</b>{{Country.region}}</p>
+<p><b>Sub Region:</b>{{Country.subregion}}</p>
+<p><b>Capital:</b>{{Country.capital}}</p>
+</section>
+
+<section class="textRight">
+<p><b>Top Level Domain:</b> {{Country.tld[0]}}</p>
+<p><b>Currency:</b>{{currency}}</p>
+<p><b>Languages:</b>{{Country.languages[0].name}}, {{Country.languages[1].name}}, {{Country.languages[2].name}}</p>
+</section>
+
+</section>

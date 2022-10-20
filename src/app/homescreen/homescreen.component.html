@@ -1,0 +1,135 @@
+
+
+<div class="pc">
+<app-navbar></app-navbar>
+<section class="inputAndFilter" >
+    <div class="input-group mb-3" id="iput"  style="width: 30vw;">
+       
+        <span class="input-group-text" id="basic-addon1" style="background-color: white;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg></span>
+        <input  type="text" class="form-control" placeholder="countries" aria-label="Username" aria-describedby="basic-addon1" style="border-left: 0px !important;">
+      </div>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown link
+        </a>
+      
+        <div class="dropdown-menu">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button (click)="addNewItem(newItem1.value)"  class="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill"  data-bs-target="#v-pills-all" value="all" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true" #newItem1>all</button>
+                <button (click)="addNewItem(newItem2.value)" class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" value="Africa" data-bs-target="#v-pills-africa" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false" #newItem2>Africa </button>
+                <button (click)="addNewItem(newItem3.value)"  class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-america" value="America" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false" #newItem3>America</button>
+                <button (click)="addNewItem(newItem4.value)"  class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-asia" value="Asia"  type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false" #newItem4>Asia</button>
+                <button (click)="addNewItem(newItem5.value)" class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-europe" value="Europe" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false" #newItem5>Europe</button> 
+                <button (click)="addNewItem(newItem6.value)" class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-oceania" value="Oceania" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false" #newItem6>Oceania</button> 
+            </div>
+            </div>
+      </div>       
+</section>
+
+<section class="countries" >
+    <div class="tab-content" id="v-pills-tabContent" >
+        <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0" >
+            <div  class="card" style="width: 18rem;" *ngFor="let items of data">
+                <a class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{items.name.common}}</h5>
+                  <p><b>Population:</b> {{items.population}}</p>
+                  <p><b>Region:</b> {{items.region}}</p>
+                  <p><b>Capital:</b> {{items.capital}}</p>
+                </div></a>
+              </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-africa" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="1">
+            <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+                
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{items.name.common}}</h5>
+                  <p><b>Population:</b> {{items.population}}</p>
+                  <p><b>Region:</b> {{items.region}}</p>
+                  <p><b>Capital:</b> {{items.capital}}</p>
+                </div></a>
+              </div>
+
+
+
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-america" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="2">
+            <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
+                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+               <div class="card-body">
+                  <h5 class="card-title">{{items.name.common}}</h5>
+                  <p><b>Population:</b> {{items.population}}</p>
+                  <p><b>Region:</b> {{items.region}}</p>
+                  <p><b>Capital:</b> {{items.capital}}</p>
+                </div></a> 
+              </div>
+
+
+
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-asia" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="3">
+
+            <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
+                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+               <div class="card-body">
+                  <h5 class="card-title">{{items.name.common}}</h5>
+                  <p><b>Population:</b> {{items.population}}</p>
+                  <p><b>Region:</b> {{items.region}}</p>
+                  <p><b>Capital:</b> {{items.capital}}</p>
+                </div></a>
+              </div>
+
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-europe" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="4">
+
+            <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+               <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
+                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{items.name.common}}</h5>
+                  <p><b>Population:</b> {{items.population}}</p>
+                  <p><b>Region:</b> {{items.region}}</p>
+                  <p><b>Capital:</b> {{items.capital}}</p>
+                </div></a>
+              </div>
+
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-oceania" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="5">
+
+            <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
+                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{items.name.common}}</h5>
+                  <p><b>Population:</b> {{items.population}}</p>
+                  <p><b>Region:</b> {{items.region}}</p>
+                  <p><b>Capital:</b> {{items.capital}}</p>
+                </div></a>
+              </div>
+
+        
+        </div>
+      </div>
+</section>
+</div>
+
+
+
+
+
+<div class="mobile">
+
+</div>

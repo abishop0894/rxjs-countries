@@ -1,0 +1,10 @@
+.pc {
+    width: 100% !important;
+    display: flex !important;
+    height: 10vh !important;
+}
+
+.mobile {
+    display: none !important;
+}
+

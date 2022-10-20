@@ -1,0 +1,24 @@
+.leftRight {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    gap: 5vw;
+
+}
+
+.textLeft, .textRight {
+display: flex;
+flex-direction: column;
+}
+
+
+@media only screen and (max-width: 600px) {
+.leftRight {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+  }
